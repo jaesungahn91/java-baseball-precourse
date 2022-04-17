@@ -13,14 +13,10 @@ public class GameManager {
     private static final String STRIKE_MESSAGE = "스트라이크";
     private static final String ENDING_MESSAGE = "3개의 숫자를 모두 맞히셨습니다! 게임 종료";
 
-    private final ComputerNumbers computerNumbers;
     private boolean gameContinueFlag = true;
 
-    public GameManager() {
-        this.computerNumbers = new ComputerNumbers();
-    }
-
     public void play() {
+        ComputerNumbers computerNumbers = new ComputerNumbers();
         computerNumbers.createRandomNumbers();
 
         boolean gameSetFlag = false;
