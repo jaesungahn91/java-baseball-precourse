@@ -49,11 +49,15 @@ public class GameManager {
             System.out.println(NOTING_MESSAGE);
             return;
         }
+
+        String message = "";
         if(count.getBall() > 0) {
-            System.out.println(count.getBall() + BALL_MESSAGE + " " + count.getStrike() + STRIKE_MESSAGE);
-            return;
+            message += count.getBall() + BALL_MESSAGE + " ";
         }
-        System.out.println(count.getStrike() + STRIKE_MESSAGE);
+        if(count.getStrike() > 0) {
+            message += count.getStrike() + STRIKE_MESSAGE;
+        }
+        System.out.println(message);
     }
 
     public void askContinue() {
