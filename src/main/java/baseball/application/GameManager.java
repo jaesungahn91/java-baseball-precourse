@@ -1,4 +1,6 @@
-package baseball.domain;
+package baseball.application;
+
+import baseball.domain.ComputerNumbers;
 
 public class GameManager {
 
