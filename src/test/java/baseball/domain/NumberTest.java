@@ -14,4 +14,11 @@ class NumberTest {
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
+    @ParameterizedTest
+    @ValueSource(strings = {"d", ""})
+    void 예외테스트_잘못된_값_숫자_생성(final String value) {
+        assertThatThrownBy(() -> new Number(value))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
 }
