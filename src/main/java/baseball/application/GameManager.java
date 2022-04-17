@@ -14,6 +14,7 @@ public class GameManager {
     private static final String ENDING_MESSAGE = "3개의 숫자를 모두 맞히셨습니다! 게임 종료";
 
     private final ComputerNumbers computerNumbers;
+    private boolean gameContinueFlag = true;
 
     public GameManager() {
         this.computerNumbers = new ComputerNumbers();
@@ -34,6 +35,8 @@ public class GameManager {
         }
 
         System.out.println(ENDING_MESSAGE);
+
+        askContinue();
     }
 
     private String[] askPlayerNumber() {
@@ -51,5 +54,16 @@ public class GameManager {
             return;
         }
         System.out.println(count.getStrike() + STRIKE_MESSAGE);
+    }
+
+    public void askContinue() {
+        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+        if(!Console.readLine().equals("1")) {
+            this.gameContinueFlag = false;
+        }
+    }
+
+    public boolean isGameContinue() {
+        return this.gameContinueFlag;
     }
 }
